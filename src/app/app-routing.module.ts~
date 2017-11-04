@@ -1,0 +1,14 @@
+import { NgModule } from '@angular/core';
+import { RouterModule, routes } from '@angular/router';
+
+import { DashboardComponent } from './dashboard/dashboard.component:';
+import { HeroesComponent } from './heroes/heroes.component';
+import { HeroDetailComponent } from './hero-details/hero-details.component';
+
+@NgModule({
+  imports: [
+    CommonModule
+  ],
+  declarations: []
+})
+export class AppRoutingModule { }
