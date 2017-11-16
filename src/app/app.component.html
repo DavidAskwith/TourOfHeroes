@@ -1,8 +1,7 @@
-<h1>{{title}}</h1>
-
-<mat-checkbox>Check ME</mat-checkbox>
-<nav>
-  <a routerLink="/dashboard">Dashboard</a>
-  <a routerLink="/heroes">Heroes</a>
-</nav>
-<router-outlet></router-outlet>
+<mat-toolbar color="primary">
+  <span>{{title}}</span>
+  <span class="fill-remaining"></span>
+  <a mat-button routerLink="/dashboard" >Dashboard</a>
+  <a mat-button routerLink="/heroes">Heroes</a>
+</mat-toolbar>
+<router-outlet class="mat-app-background"></router-outlet>
