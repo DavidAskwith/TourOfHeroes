@@ -5,6 +5,8 @@ import { HttpModule } from '@angular/http';
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './in-memory-data.service';
 
+import { MaterialModule } from './material.module';
+
 import { AppComponent } from './app.component';
 import { HeroDetailsComponent } from './hero-details/hero-details.component';
 import { HeroesComponent } from './heroes/heroes.component';
@@ -25,7 +27,8 @@ import { AppRoutingModule } from './app-routing.module';
     FormsModule,
     HttpModule,
     InMemoryWebApiModule.forRoot( InMemoryDataService ),
-    AppRoutingModule
+    AppRoutingModule,
+    MaterialModule
   ],
   providers: [ HeroesService ],
   bootstrap: [ AppComponent ]
