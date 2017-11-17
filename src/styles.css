@@ -2,6 +2,14 @@
 @import "~@angular/material/prebuilt-themes/purple-green.css";
 
 .fill-remaining {
-  flex: 1 1 auto;
+    flex: 1 1 auto;
+}
+
+.text-color {
+    color: white;
+}
+
+.text-center {
+    text-align: center;
 }
 
