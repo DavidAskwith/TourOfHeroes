@@ -1,15 +1,27 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~@angular/material/prebuilt-themes/purple-green.css";
 
+body {
+  padding: 0px;
+  margin:0px;
+}
+
 .fill-remaining {
     flex: 1 1 auto;
 }
 
 .text-color {
-    color: white;
+    color: white !important;
 }
 
 .text-center {
     text-align: center;
 }
 
+.flex-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+}

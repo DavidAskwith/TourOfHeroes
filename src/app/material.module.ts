@@ -11,7 +11,8 @@ import {
   MatInputModule,
   MatListModule,
   MatChipsModule,
-  MatIconModule
+  MatIconModule,
+  MatDialogModule
 
 } from '@angular/material';
 
@@ -27,7 +28,8 @@ import {
     MatInputModule,
     MatListModule,
     MatChipsModule,
-    MatIconModule
+    MatIconModule,
+    MatDialogModule
   ],
   exports: [
     MatButtonModule,
@@ -38,7 +40,8 @@ import {
     MatInputModule,
     MatListModule,
     MatChipsModule,
-    MatIconModule
+    MatIconModule,
+    MatDialogModule
   ],
   declarations: []
 })

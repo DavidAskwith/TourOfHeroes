@@ -14,13 +14,16 @@ import { HeroesService } from './heroes.service';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { Hero } from './hero';
 import { AppRoutingModule } from './app-routing.module';
+import { HeroSearchComponent } from './hero-search/hero-search.component';
+import { HeroSearchService } from './hero-search.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeroDetailsComponent,
     HeroesComponent,
-    DashboardComponent
+    DashboardComponent,
+    HeroSearchComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +33,10 @@ import { AppRoutingModule } from './app-routing.module';
     AppRoutingModule,
     MaterialModule
   ],
-  providers: [ HeroesService ],
+  providers: [
+    HeroesService,
+    HeroSearchService
+  ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }

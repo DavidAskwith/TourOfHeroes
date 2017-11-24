@@ -15,7 +15,6 @@ export class HeroSearchService {
     return this.http
       .get(`api/heroes/?name=${term}`)
       .map(response => {
-        console.log(response.json());
         return <Hero[]> response.json();
       });
   }
