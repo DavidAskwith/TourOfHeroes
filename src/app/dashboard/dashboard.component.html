@@ -2,8 +2,8 @@
   <h2 class="text-color text-center mat-h1">Top Heroes</h2>
 </header>
 <div class="flex-container">
-  <div class="flex-card"*ngFor="let hero of heroes">
-    <mat-card [routerLink]="['/details', hero.id]" >
+  <div class="flex-card" *ngFor="let hero of heroes">
+    <mat-card (click)="openDialog(hero)">
       <span>{{hero.name}}</span>
     </mat-card>
   </div>

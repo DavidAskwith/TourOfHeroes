@@ -1,9 +1,13 @@
 <mat-toolbar color="primary">
   <span>{{title}}</span>
   <span class="fill-remaining"></span>
-  <a mat-button routerLink="/dashboard" >Dashboard</a>
-  <a mat-button routerLink="/heroes">Heroes</a>
-  <button mat-button><mat-icon>search</mat-icon> Search</button>
+  <button mat-button [matMenuTriggerFor]="menu"><mat-icon>menu</mat-icon></button>
+
+  <mat-menu #menu="matMenu">
+    <a mat-menu-item routerLink="/dashboard" >Dashboard</a>
+    <a mat-menu-item routerLink="/heroes">Heroes</a>
+    <button mat-menu-item>Search</button>
+  </mat-menu>
 </mat-toolbar>
 <div class="container-padding">
   <router-outlet></router-outlet>

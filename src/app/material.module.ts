@@ -6,6 +6,7 @@ import {
   MatButtonModule,
   MatCheckboxModule,
   MatToolbarModule,
+  MatMenuModule,
   MatCardModule,
   MatFormFieldModule,
   MatInputModule,
@@ -29,7 +30,8 @@ import {
     MatListModule,
     MatChipsModule,
     MatIconModule,
-    MatDialogModule
+    MatDialogModule,
+    MatMenuModule
   ],
   exports: [
     MatButtonModule,
@@ -41,7 +43,8 @@ import {
     MatListModule,
     MatChipsModule,
     MatIconModule,
-    MatDialogModule
+    MatDialogModule,
+    MatMenuModule
   ],
   declarations: []
 })

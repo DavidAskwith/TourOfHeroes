@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
 import { OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 
 import { Hero } from '../hero';
 import { HeroesService } from '../heroes.service';
+import { HeroDetailsComponent } from '../hero-details/hero-details.component';
 
 @Component({
   selector: 'app-heroes',
@@ -15,6 +17,7 @@ export class HeroesComponent implements OnInit {
   selectedHero: Hero;
 
   constructor(
+    public dialog: MatDialog,
     private heroesService: HeroesService,
     private router: Router
   ) { }
@@ -54,6 +57,13 @@ export class HeroesComponent implements OnInit {
         this.heroes = this.heroes.filter(h => h !== hero);
         if (this.selectedHero === hero) { this.selectedHero = null; }
       });
+  }
+
+  openDialog(hero: Hero): void {
+    this.dialog.open(HeroDetailsComponent, {
+      width: '75%',
+      data: { hero: hero }
+    });
   }
 
 }
