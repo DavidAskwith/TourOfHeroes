@@ -22,14 +22,11 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    align-items: center;
     height: 100%;
 }
 
 .flex-card {
-    box-sizing: border-box; 
-    width: 100%;
-    max-width: 400px;
-    text-align: center;
-    margin: 15px 0px;
+    margin: 7.5px 7.5px;
 }
+
+

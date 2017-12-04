@@ -1,5 +1,41 @@
-.card {
-  text-align: center;
-  margin: 15px 0px;
-
+.fab {
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
 }
+
+/*display the content as flex column so expands to fill space*/
+.hero-card {
+    display: flex;
+    flex-direction: column;
+}
+
+/*allows the content section ot grow and fill remaining space*/
+.hero-card mat-card-content {
+    flex-grow: 1;
+}
+
+.float-right {
+    float: right;
+}
+
+/*Cards are full width before 1000px*/
+@media screen and (max-width: 1000px){
+  .hero-card {
+    width: 100%;
+  }
+}
+
+/*Cards are half width after 1000px*/
+@media screen and (min-width: 1000px){
+  .hero-card {
+    width: calc(50% - 63px);
+  }
+}
+
+@media screen and (min-width: 1800px){
+  .hero-card {
+    width: calc(33.33% - 63px);
+  }
+}
+

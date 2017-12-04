@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 
 import { Hero } from '../hero';
@@ -19,7 +18,6 @@ export class HeroesComponent implements OnInit {
   constructor(
     public dialog: MatDialog,
     private heroesService: HeroesService,
-    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -29,14 +27,6 @@ export class HeroesComponent implements OnInit {
   getHeroes(): void {
     this.heroesService.getHeroes()
       .then(heroes => this.heroes = heroes);
-  }
-
-  onSelect(hero: Hero): void {
-    this.selectedHero = hero;
-  }
-
-  gotoDetails(): void {
-    this.router.navigate(['/details', this.selectedHero.id]);
   }
 
   add(name: string): void {
@@ -61,7 +51,6 @@ export class HeroesComponent implements OnInit {
 
   openDialog(hero: Hero): void {
     this.dialog.open(HeroDetailsComponent, {
-      width: '75%',
       data: { hero: hero }
     });
   }

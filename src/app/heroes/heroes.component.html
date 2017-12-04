@@ -1,35 +1,39 @@
-<br>
-<div *ngIf="selectedHero">
- <h2>
-   {{selectedHero.name | uppercase }} is my hero 
- </h2>
- <button (click)="gotoDetails()">View Details</button>
-</div>
-<mat-card class="text-center">
+<mat-card>
 
   <mat-card-title>Create a New Hero</mat-card-title>
   <mat-form-field>
     <input matInput placeholder="Hero Name" #heroName />
   </mat-form-field>
   <mat-card-actions>
-    <button mat-button class="text-color" (click)="add(heroName.value); 
+    <button mat-raised-button class="text-color" (click)="add(heroName.value); 
         heroName.value=''"> Create </button>
   </mat-card-actions>
 </mat-card>
 
-<h1 class="text-color text-center">Heroes<h1>
+<header>
+  <h1 class="text-color text-center mat-h1">Heroes</h1>
+</header>
 
 <div class="flex-container">
-  <mat-card class="flex-card" *ngFor="let hero of heroes" (click)="onSelect(hero)" 
-            [class.selected]="hero === selectedHero">
-
-    <mat-card-title>{{hero.name}}</mat-card-title>
-    <mat-card-subtitle>Hero Identifier <span>{{hero.id}}</span></mat-card-subtitle> 
+  <mat-card class="hero-card flex-card" *ngFor="let hero of heroes" [class.selected]="hero === selectedHero">
+    <mat-card-header>
+      <img mat-card-avatar src="{{hero.avatarLink}}" alt="Photo of {{hero.name}}">
+      <mat-card-title>{{hero.name}}</mat-card-title>
+      <mat-card-subtitle>{{hero.realName}}</mat-card-subtitle> 
+    </mat-card-header>
+    <mat-card-content>
+      <p>{{hero.description}}</p>
+    </mat-card-content>
     <mat-card-actions>
-      <button mat-button (click)="openDialog(hero)">Details</button>
-      <button mat-button>Edit</button>
-      <button mat-button (click)="delete(hero); $event.stopPropagation()">
-        Delete</button>
+      <button mat-raised-button (click)="openDialog(hero)">Details</button>
+      <button class="float-right" mat-icon-button (click)="delete(hero); $event.stopPropagation()">
+        <mat-icon>delete</mat-icon>
+      </button>
+      <button class="float-right" mat-icon-button>
+        <mat-icon>edit</mat-icon> 
+      </button>
     </mat-card-actions>
   </mat-card>
 </div>
+
+<button mat-fab class="fab"><mat-icon>add</mat-icon></button>
