@@ -17,6 +17,7 @@ import { EditHeroComponent } from './edit-hero/edit-hero.component';
 import { Hero } from './hero';
 import { AppRoutingModule } from './app-routing.module';
 import { HeroSearchService } from './hero-search.service';
+import { AddHeroComponent } from './add-hero/add-hero.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { HeroSearchService } from './hero-search.service';
     HeroesComponent,
     DashboardComponent,
     HeroSearchComponent,
-    EditHeroComponent
+    EditHeroComponent,
+    AddHeroComponent
   ],
   imports: [
     BrowserModule,
