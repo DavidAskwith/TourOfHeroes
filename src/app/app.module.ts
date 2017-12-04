@@ -11,7 +11,6 @@ import { HeroDetailsComponent } from './hero-details/hero-details.component';
 import { HeroesComponent } from './heroes/heroes.component';
 import { HeroesService } from './heroes.service';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { HeroSearchComponent } from './hero-search/hero-search.component';
 import { EditHeroComponent } from './edit-hero/edit-hero.component';
 
 import { Hero } from './hero';
@@ -25,7 +24,6 @@ import { AddHeroComponent } from './add-hero/add-hero.component';
     HeroDetailsComponent,
     HeroesComponent,
     DashboardComponent,
-    HeroSearchComponent,
     EditHeroComponent,
     AddHeroComponent
   ],

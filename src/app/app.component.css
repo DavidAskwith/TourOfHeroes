@@ -1,4 +1,12 @@
 .container-padding{
     padding: 5px 5px;
+}
 
+@media screen and (max-width: 1000px){
+  .search {
+    width:100%;
+  }
+  .search > mat-form-field{
+    width: calc(100% - 48px)
+  }
 }
