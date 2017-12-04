@@ -4,7 +4,6 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './in-memory-data.service';
-
 import { MaterialModule } from './material.module';
 
 import { AppComponent } from './app.component';
@@ -12,9 +11,11 @@ import { HeroDetailsComponent } from './hero-details/hero-details.component';
 import { HeroesComponent } from './heroes/heroes.component';
 import { HeroesService } from './heroes.service';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { HeroSearchComponent } from './hero-search/hero-search.component';
+import { EditHeroComponent } from './edit-hero/edit-hero.component';
+
 import { Hero } from './hero';
 import { AppRoutingModule } from './app-routing.module';
-import { HeroSearchComponent } from './hero-search/hero-search.component';
 import { HeroSearchService } from './hero-search.service';
 
 @NgModule({
@@ -23,7 +24,8 @@ import { HeroSearchService } from './hero-search.service';
     HeroDetailsComponent,
     HeroesComponent,
     DashboardComponent,
-    HeroSearchComponent
+    HeroSearchComponent,
+    EditHeroComponent
   ],
   imports: [
     BrowserModule,
@@ -36,6 +38,9 @@ import { HeroSearchService } from './hero-search.service';
   providers: [
     HeroesService,
     HeroSearchService
+  ],
+  //declares components that dynanically created
+  entryComponents: [
   ],
   bootstrap: [ AppComponent ]
 })
