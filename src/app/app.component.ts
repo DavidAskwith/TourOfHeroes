@@ -24,6 +24,7 @@ export class AppComponent implements OnInit {
   private searchTerms = new Subject<string>();
   visible = false;
 
+  // Links to populate the tab nav
   navLinks: Object = [
     {
       label: 'Dashboard',
@@ -38,7 +39,7 @@ export class AppComponent implements OnInit {
 
   constructor(
     private heroSearchService: HeroSearchService,
-    private router: Router
+    // private router: Router,
   ) { }
 
   search(term: string): void {
@@ -59,11 +60,6 @@ export class AppComponent implements OnInit {
         console.log(error);
         return Observable.of<Hero[]>([]);
       });
-  }
-
-  gotoDetail(hero: Hero): void {
-    const link = ['/detail', hero.id];
-    this.router.navigate(link);
   }
 
 }
