@@ -4,6 +4,8 @@ import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 
 import { Hero } from '../hero';
 import { HeroesService } from '../heroes.service';
+import { OverlayService } from '../overlay.service';
+
 import { HeroDetailsComponent } from '../hero-details/hero-details.component';
 
 @Component({
@@ -18,6 +20,7 @@ export class HeroesComponent implements OnInit {
   constructor(
     public dialog: MatDialog,
     private heroesService: HeroesService,
+    private overlay: OverlayService
   ) { }
 
   ngOnInit(): void {
@@ -54,5 +57,17 @@ export class HeroesComponent implements OnInit {
       data: { hero: hero }
     });
   }
+
+  showOverlay(): void {
+
+    this.overlay.open();
+     //Opens overlay and holds remote control for
+    //const dialogRef: OverlayRemote = this.overlay.open();
+
+    //setTimeout(() => {
+      //dialogRef.close();
+    //}, 2000);
+  }
+
 
 }

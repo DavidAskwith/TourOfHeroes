@@ -19,19 +19,6 @@
     float: right;
 }
 
-/*Cards are full width before 1000px*/
-@media screen and (max-width: 1000px){
-  .hero-card {
-    width: 100%;
-  }
-}
-
-/*Cards are half width after 1000px*/
-@media screen and (min-width: 1000px){
-  .hero-card {
-    width: calc(50% - 63px);
-  }
-}
 
 @media screen and (min-width: 1800px){
   .hero-card {

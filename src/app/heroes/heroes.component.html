@@ -1,15 +1,3 @@
-<mat-card>
-
-  <mat-card-title>Create a New Hero</mat-card-title>
-  <mat-form-field>
-    <input matInput placeholder="Hero Name" #heroName />
-  </mat-form-field>
-  <mat-card-actions>
-    <button mat-raised-button class="text-color" (click)="add(heroName.value); 
-        heroName.value=''"> Create </button>
-  </mat-card-actions>
-</mat-card>
-
 <header>
   <h1 class="text-color text-center mat-h1">Heroes</h1>
 </header>
@@ -36,4 +24,4 @@
   </mat-card>
 </div>
 
-<button mat-fab class="fab"><mat-icon>add</mat-icon></button>
+<button mat-fab class="fab" (click)="showOverlay()"><mat-icon>add</mat-icon></button>
