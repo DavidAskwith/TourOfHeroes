@@ -8,111 +8,29 @@
 
 
   <div class="overlay-content">
-    <h1 class="mat-h1">Test</h1>
     <mat-form-field>
-      <input matInput placeholder="Input">
+      <input matInput [(ngModel)]="model.name" placeholder="Name" name="name"  required>
     </mat-form-field>
     <mat-form-field>
-      <input matInput placeholder="Input">
+      <input matInput [(ngModel)]="model.realName" placeholder="Real Name" name="realName">
     </mat-form-field>
     <mat-form-field>
-      <input matInput placeholder="Input">
+      <input matInput type="number" min="1" [(ngModel)]="model.height" placeholder="Height" name="height">
     </mat-form-field>
     <mat-form-field>
-      <input matInput placeholder="Input">
+      <input matInput type="number" min="1" [(ngModel)]="model.weight" placeholder="Weight (Lbs)" name="weight">
     </mat-form-field>
     <mat-form-field>
-      <input matInput placeholder="Input">
+      <textarea matInput [(ngModel)]="model.description" placeholder="Description" rows="6" required></textarea>
     </mat-form-field>
     <mat-form-field>
-      <input matInput placeholder="Input">
+      <textarea matInput [(ngModel)]="model.powers" placeholder="Powers" rows="6"></textarea>
     </mat-form-field>
     <mat-form-field>
-      <input matInput placeholder="Input">
+      <textarea matInput [(ngModel)]="model.abilities" placeholder="Abilities" rows="6"></textarea>
     </mat-form-field>
     <mat-form-field>
-      <input matInput placeholder="Input">
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput placeholder="Input">
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput placeholder="Input">
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput placeholder="Input">
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput placeholder="Input">
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput placeholder="Input">
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput placeholder="Input">
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput placeholder="Input">
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput placeholder="Input">
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput placeholder="Input">
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput placeholder="Input">
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput placeholder="Input">
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput placeholder="Input">
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput placeholder="Input">
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput placeholder="Input">
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput placeholder="Input">
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput placeholder="Input">
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput placeholder="Input">
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput placeholder="Input">
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput placeholder="Input">
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput placeholder="Input">
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput placeholder="Input">
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput placeholder="Input">
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput placeholder="Input">
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput placeholder="Input">
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput placeholder="Input">
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput placeholder="Input">
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput placeholder="Input">
+      <textarea matInput [(ngModel)]="model.groups" placeholder="Groups" rows="6"></textarea>
     </mat-form-field>
   </div>
 </div>

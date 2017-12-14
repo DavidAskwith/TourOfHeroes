@@ -1,4 +1,7 @@
 import { Component, forwardRef, Inject } from '@angular/core';
+import { NgModel } from '@angular/forms';
+
+import { Hero } from '../hero';
 import { OverlayService } from '../overlay.service';
 
 @Component({
@@ -7,6 +10,8 @@ import { OverlayService } from '../overlay.service';
   styleUrls: ['./add-hero.component.css']
 })
 export class AddHeroComponent {
+
+  model = new Hero();
 
   constructor(
     // Stops the program from crashing due to circular dependency
