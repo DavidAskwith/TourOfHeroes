@@ -8,6 +8,7 @@ export class InMemoryDataService implements InMemoryDbService {
 
 
       {
+        id: 1,
         name: 'IRON MAN',
         description: `Wounded, captured and forced to build a weapon by his enemies, billionaire
           industrialist Tony Stark instead created an advanced suit of armor to save his life and
@@ -29,6 +30,7 @@ export class InMemoryDataService implements InMemoryDbService {
         imageLink: '/assets/img/IronManImage.jpg'
       },
       {
+        id: 2,
         name: 'SPIDER-MAN',
         description: `Bitten by a radioactive spider, high school student Peter Parker gained
           the speed, strength and powers of a spider. Adopting the name Spider-Man, Peter hoped
@@ -51,6 +53,7 @@ export class InMemoryDataService implements InMemoryDbService {
         imageLink: '/assets/img/SpiderManImage.jpg'
       },
       {
+        id: 3,
         name: 'CAPTAIN AMERICA',
         description: `Vowing to serve his country any way he could, young Steve Rogers took
           the super soldier serum to become America\'s one-man army. Fighting for the red, white
@@ -80,6 +83,7 @@ export class InMemoryDataService implements InMemoryDbService {
         imageLink: '/assets/img/CaptainAmericaImage.jpg'
       },
       {
+        id: 4,
         name: 'PUNISHER',
         description: `Francis Castiglione is a former U.S. Marine Captain. Before Frank joined the
           Marines, he was studying to become a Catholic priest but changed his mind because he was
@@ -114,6 +118,7 @@ export class InMemoryDataService implements InMemoryDbService {
         imageLink: '/assets/img/PunisherImage.jpg'
       },
       {
+        id: 5,
         name: 'BLACK PANTHER',
         description: `T\'Challa is heir to the centuries-old ruling dynasty of the African kingdom
           Wakanda, and ritual leader of its Panther Clan. After revenging his father death he began
@@ -135,6 +140,7 @@ export class InMemoryDataService implements InMemoryDbService {
         imageLink: '/assets/img/BlackPantherImage.jpg'
       },
       {
+        id: 6,
         name: 'HULK',
         description: `Caught in a gamma bomb explosion while trying to save the life of a teenager,
           Dr. Bruce Banner was transformed into the incredibly powerful creature called the Hulk.
