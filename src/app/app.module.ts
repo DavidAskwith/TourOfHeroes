@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './in-memory-data.service';
@@ -19,11 +19,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { HeroSearchService } from './hero-search.service';
 import { OverlayService } from './overlay.service';
 import { HeroesService } from './heroes.service';
+import { ExitWarnDialogComponent } from './exit-warn-dialog/exit-warn-dialog.component';
 
 @NgModule({
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpModule,
     InMemoryWebApiModule.forRoot( InMemoryDataService ),
     AppRoutingModule,
@@ -36,7 +38,8 @@ import { HeroesService } from './heroes.service';
     HeroesComponent,
     DashboardComponent,
     EditHeroComponent,
-    AddHeroComponent
+    AddHeroComponent,
+    ExitWarnDialogComponent
   ],
   providers: [
     HeroesService,
@@ -46,7 +49,8 @@ import { HeroesService } from './heroes.service';
   // geclares components that dynanically created
   entryComponents: [
     AddHeroComponent,
-    HeroDetailsComponent
+    HeroDetailsComponent,
+    ExitWarnDialogComponent
   ],
   bootstrap: [ AppComponent ]
 })

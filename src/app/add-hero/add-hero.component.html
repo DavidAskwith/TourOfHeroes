@@ -1,50 +1,46 @@
 <div class="overlay-container">
-  <mat-toolbar color="primary" class=" overlay-toolbar mat-elevation-z4">
-    <button mat-icon-button (click)="closeOverlay()"><mat-icon>close</mat-icon></button>
+  <mat-toolbar color="primary" class=" overlay-toolbar mat-elevation-z4"> 
+    <button mat-icon-button (click)="openExitWarn()"><mat-icon>close</mat-icon></button>
     <span>Create Hero</span>
     <span class="fill-remaining"></span>
-    <button mat-button>SAVE</button>
+    <button type="submit" form="addHero" [disabled]="!rForm.valid" mat-button >SAVE</button>
   </mat-toolbar>
 
 
   <div class="overlay-content">
-    <mat-form-field>
-      <input matInput [(ngModel)]="model.name" placeholder="Name" name="name"  required>
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput [(ngModel)]="model.realName" placeholder="Real Name" name="realName">
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput type="number" min="1" [(ngModel)]="model.height" placeholder="Height" name="height">
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput type="number" min="1" [(ngModel)]="model.weight" placeholder="Weight (Lbs)" name="weight">
-    </mat-form-field>
-    <mat-form-field>
-      <textarea matInput [(ngModel)]="model.description" placeholder="Description" rows="6" required></textarea>
-    </mat-form-field>
-    <mat-form-field>
-      <textarea matInput [(ngModel)]="model.powers" placeholder="Powers" rows="6"></textarea>
-    </mat-form-field>
-    <mat-form-field>
-      <textarea matInput [(ngModel)]="model.abilities" placeholder="Abilities" rows="6"></textarea>
-    </mat-form-field>
-    <mat-form-field>
-      <textarea matInput [(ngModel)]="model.groups" placeholder="Groups" rows="6"></textarea>
-    </mat-form-field>
+
+    <form id="addHero" [formGroup]="rForm" (ngSubmit)="postHero(rForm.value)" >
+      <mat-form-field>
+        <input matInput placeholder="Name" formControlName="name" required >
+        <mat-error *ngIf="!rForm.controls['name'].valid">This field is required</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Real Name" formControlName="realName" required >
+        <mat-error *ngIf="!rForm.controls['name'].valid">This field is required</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput type="number" placeholder="Height" formControlName="height" >
+        <mat-error *ngIf="!rForm.controls['height'].valid">Height must be greater than 0</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput type="number" placeholder="Weight (Lbs)" formControlName="weight" >
+        <mat-error *ngIf="!rForm.controls['weight'].valid">Weight must be greater than 0</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <textarea matInput placeholder="Description" rows="6" formControlName="description" required ></textarea>
+        <mat-error *ngIf="!rForm.controls['name'].valid">This field is required</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <textarea matInput placeholder="Powers" rows="6" formControlName="powers" ></textarea>
+      </mat-form-field>
+      <mat-form-field>
+        <textarea matInput placeholder="Abilities" rows="6" formControlName="abilities" ></textarea>
+      </mat-form-field>
+      <mat-form-field>
+        <textarea matInput placeholder="Groups" rows="6" formControlName="groups" ></textarea>
+      </mat-form-field>
+    </form>
+
   </div>
+
 </div>
-<!--<mat-toolbar>-->
-<!--<mat-toolbar>-->
-<!--<mat-card>-->
-
-  <!--<mat-card-title>Create a New Hero</mat-card-title>-->
-  <!--<mat-form-field>-->
-    <!--<input matInput placeholder="Hero Name" #heroName />-->
-  <!--</mat-form-field>-->
-  <!--<mat-card-actions>-->
-    <!--<button mat-raised-button class="text-color" (click)="add(heroName.value); -->
-        <!--heroName.value=''"> Create </button>-->
-  <!--</mat-card-actions>-->
-<!--</mat-card>-->
-
