@@ -1,4 +1,5 @@
 import { Component, forwardRef, Inject } from '@angular/core';
+
 import { NgModel } from '@angular/forms';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
@@ -45,8 +46,9 @@ export class AddHeroComponent {
   postHero(post) {
     this.hero = post;
 
-    if(this.rForm.valid)
+    if (this.rForm.valid) {
       this.addHero();
+    }
   }
 
   addHero() {
@@ -60,8 +62,12 @@ export class AddHeroComponent {
   }
 
   openExitWarn (hero: Hero): void {
-    this.dialog.open(ExitWarnDialogComponent, {
-      data: { hero: hero }
+   const dialogRef =  this.dialog.open(ExitWarnDialogComponent);
+    dialogRef.afterClosed().subscribe( close => {
+      if (close) {
+        this.overlayService.close();
+      }
     });
+
   }
 }
