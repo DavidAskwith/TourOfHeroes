@@ -44,30 +44,36 @@ export class AddHeroComponent {
 
   // Handles the forms post
   postHero(post) {
-    this.hero = post;
-
     if (this.rForm.valid) {
+      this.hero = post;
       this.addHero();
     }
   }
 
+  // Calls heroservice method to create hero
+  // the posted hero is return in a promise
   addHero() {
 
-    this.heroService.create(this.hero.name)
+    this.heroService.create(this.hero)
       .then(resp => {
         console.log(resp);
       });
-
       this.overlayService.close();
   }
 
   openExitWarn (hero: Hero): void {
-   const dialogRef =  this.dialog.open(ExitWarnDialogComponent);
-    dialogRef.afterClosed().subscribe( close => {
-      if (close) {
-        this.overlayService.close();
-      }
-    });
+
+    if (this.rForm.dirty) {
+      const dialogRef =  this.dialog.open(ExitWarnDialogComponent);
+      dialogRef.afterClosed().subscribe( close => {
+        if (close) {
+          this.overlayService.close();
+        }
+      });
+    } else {
+      this.overlayService.close();
+    }
 
   }
+
 }
