@@ -5,6 +5,7 @@ import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { Hero } from '../hero';
 import { HeroesService } from '../heroes.service';
 import { OverlayService } from '../overlay.service';
+import { AddHeroOverlayRef } from '../add-hero-overlay-ref';
 
 import { HeroDetailsComponent } from '../hero-details/hero-details.component';
 
@@ -14,8 +15,8 @@ import { HeroDetailsComponent } from '../hero-details/hero-details.component';
   styleUrls: ['./heroes.component.css']
 })
 export class HeroesComponent implements OnInit {
+
   heroes: Hero[];
-  selectedHero: Hero;
 
   constructor(
     public dialog: MatDialog,
@@ -32,23 +33,11 @@ export class HeroesComponent implements OnInit {
       .then(heroes => this.heroes = heroes);
   }
 
-  add(name: string): void {
-    name = name.trim();
-    if (name) {
-      this.heroesService.create(name)
-        .then((hero) => {
-          this.heroes.push(hero);
-          this.selectedHero = null;
-        });
-    }
-  }
-
   delete(hero: Hero): void {
     this.heroesService
       .delete(hero.id)
       .then(() => {
         this.heroes = this.heroes.filter(h => h !== hero);
-        if (this.selectedHero === hero) { this.selectedHero = null; }
       });
   }
 
@@ -60,13 +49,16 @@ export class HeroesComponent implements OnInit {
 
   showOverlay(): void {
 
-    this.overlay.open();
-     //Opens overlay and holds remote control for
-    //const dialogRef: OverlayRemote = this.overlay.open();
+    // Opens overlay and holds remote control for
+    const dialogRef: AddHeroOverlayRef = this.overlay.open();
 
-    //setTimeout(() => {
-      //dialogRef.close();
-    //}, 2000);
+
+    // Adds the newly created hero to the heroes after 
+    // the add-hero dialog closes
+    dialogRef.afterClosed().subscribe( resp => {
+      this.heroes.push(resp);
+    });
+
   }
 
 

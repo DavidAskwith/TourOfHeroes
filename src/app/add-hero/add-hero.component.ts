@@ -6,8 +6,8 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 
 import { Hero } from '../hero';
 import { ExitWarnDialogComponent } from '../exit-warn-dialog/exit-warn-dialog.component';
-import { OverlayService } from '../overlay.service';
 import { HeroesService } from '../heroes.service';
+import { AddHeroOverlayRef } from '../add-hero-overlay-ref';
 
 @Component({
   selector: 'app-add-hero',
@@ -22,11 +22,10 @@ export class AddHeroComponent {
   rForm: FormGroup;
 
   constructor(
-    // Stops the program from crashing due to circular dependency
-    @Inject(forwardRef(() => OverlayService)) private overlayService: OverlayService,
     private heroService: HeroesService,
     public dialog: MatDialog,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private dialogRef: AddHeroOverlayRef
   ) {
 
     this.rForm = fb.group({
@@ -56,22 +55,28 @@ export class AddHeroComponent {
 
     this.heroService.create(this.hero)
       .then(resp => {
-        console.log(resp);
+        this.hero = resp;
       });
-      this.overlayService.close();
+      this.dialogRef.close(this.hero);
   }
 
   openExitWarn (hero: Hero): void {
 
+    // Runs if the form has data entered
     if (this.rForm.dirty) {
-      const dialogRef =  this.dialog.open(ExitWarnDialogComponent);
-      dialogRef.afterClosed().subscribe( close => {
+
+      // Opens a warning dialog
+      const exitWarnDialogRef =  this.dialog.open(ExitWarnDialogComponent);
+
+      // If discard is chosen the addhero dialog is closed
+      exitWarnDialogRef.afterClosed().subscribe( close => {
         if (close) {
-          this.overlayService.close();
+          this.dialogRef.close();
         }
       });
+
     } else {
-      this.overlayService.close();
+      this.dialogRef.close();
     }
 
   }
