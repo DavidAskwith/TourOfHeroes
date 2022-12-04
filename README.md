@@ -1,4 +1,4 @@
-# TOUR OF HEROES
+# Tour of Heroes
 
 A hero tracking application. Create new heroes, view heroes, delete heroes and view heroes details. This project started with the Tour of Heroes tutorial that is designed to teach people the Angular framework. After completing the tutorial I was immediately interested in creating a more complex and visually appealing application. The application was quickly completely overhauled and hardly resembled the original created in the tutorial. This was a very valuable project for the progression of my web development skills.
 
